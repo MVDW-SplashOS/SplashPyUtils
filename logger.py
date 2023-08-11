@@ -20,6 +20,7 @@ class log:
     def tree(self, start = True, end = True, tree = 0):
 
         i=0;
+        
         for line in self:
             symbol = "├╴";
 
@@ -28,8 +29,9 @@ class log:
             if i == (len(self)-1) and end:
                 symbol = "╰╴"
 
-            spacing = "";
+            
             i2 = 0;
+            spacing = "";
             while i2 < tree:
                 spacing += "│  ";
                 i2=i2+1;
@@ -40,3 +42,5 @@ class log:
                 log.print(spacing + symbol + line);
 
             i=i+1;
+        if tree > 0:
+            log.print(spacing)
