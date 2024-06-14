@@ -10,12 +10,12 @@ class configloader:
             "sources": ("upstream-sources.yml")
         }
         if type in mapping:
-            self.file = open(mapping[type], 'r');
+            self.file = open(mapping[type], 'r')
         else:
-            log.fail("Invailid mapping for loading '" + type + "'");
-            exit();
+            log.fail(f"Invailid mapping for loading '{type}'")
+            exit()
 
     def load(self):
-        return yaml.safe_load(self.file);
+        return yaml.safe_load(self.file)
 
        
